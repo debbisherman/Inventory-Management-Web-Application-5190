@@ -18,7 +18,7 @@ const Sidebar = () => {
       <div className="h-16 flex items-center px-6 border-b border-gray-100">
         <div className="flex items-center gap-2 text-indigo-600">
           <SafeIcon icon={FiBox} className="w-6 h-6" />
-          <span className="text-xl font-bold tracking-tight text-gray-900">InvenTrack</span>
+          <span className="text-xl font-bold tracking-tight text-gray-900">test</span>
         </div>
       </div>
       
@@ -29,8 +29,8 @@ const Sidebar = () => {
             to={item.path}
             className={({ isActive }) =>
               `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                isActive 
-                  ? 'bg-indigo-50 text-indigo-700' 
+                isActive
+                  ? 'bg-indigo-50 text-indigo-700'
                   : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
               }`
             }
@@ -40,7 +40,7 @@ const Sidebar = () => {
           </NavLink>
         ))}
       </nav>
-      
+
       <div className="p-4 border-t border-gray-100">
         <div className="flex items-center gap-3 px-3 py-2">
           <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold text-sm">

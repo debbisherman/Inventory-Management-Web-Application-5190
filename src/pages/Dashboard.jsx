@@ -32,11 +32,10 @@ const StatCard = ({ title, value, icon, trend, trendLabel, colorClass }) => (
 const Dashboard = () => {
   const { items, getStats } = useInventory();
   const stats = getStats();
-
   const lowStockItems = items.filter(i => i.quantity <= i.minStock && i.quantity > 0).slice(0, 5);
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       className="space-y-6"
@@ -52,11 +51,12 @@ const Dashboard = () => {
           value={stats.totalItems} 
           icon={FiPackage} 
           colorClass="bg-indigo-100 text-indigo-600"
-          trend="+4.75%" trendLabel="vs last month"
+          trend="+4.75%"
+          trendLabel="vs last month"
         />
         <StatCard 
           title="Total Value" 
-          value={`$${stats.totalValue.toLocaleString(undefined, {minimumFractionDigits: 2})}`} 
+          value={`$${stats.totalValue.toLocaleString(undefined, { minimumFractionDigits: 2 })}`} 
           icon={FiDollarSign} 
           colorClass="bg-emerald-100 text-emerald-600"
         />

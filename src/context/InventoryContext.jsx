@@ -37,7 +37,6 @@ export const InventoryProvider = ({ children }) => {
     const totalValue = items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
     const lowStock = items.filter(item => item.quantity <= item.minStock && item.quantity > 0).length;
     const outOfStock = items.filter(item => item.quantity === 0).length;
-
     return { totalItems, totalValue, lowStock, outOfStock };
   };
 

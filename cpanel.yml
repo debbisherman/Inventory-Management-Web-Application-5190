@@ -1,4 +1,3 @@
-# This file tells cPanel's Git Version Control how to deploy your files
 deployment:
   tasks:
     - export DEPLOYPATH=/home/your_cpanel_username/public_html
