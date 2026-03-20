@@ -1,3 +1,4 @@
+# Corrected deployment tasks for cPanel Git
 deployment:
   tasks:
     - export DEPLOYPATH=/home/your_cpanel_username/public_html
