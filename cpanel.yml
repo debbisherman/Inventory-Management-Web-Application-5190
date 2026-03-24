@@ -1,7 +1,7 @@
 # Corrected deployment tasks for cPanel Git
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/your_cpanel_username/public_html
+    - export DEPLOYPATH=/home/cimmytrax/public_html
     - /bin/cp -R dist/* $DEPLOYPATH
     - /bin/cp server.js $DEPLOYPATH
     - /bin/cp package.json $DEPLOYPATH
