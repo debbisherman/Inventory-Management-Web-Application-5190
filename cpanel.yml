@@ -1,5 +1,5 @@
-# Corrected deployment tasks for cPanel
-# CRITICAL: Ensure there is a SPACE after the dash '-' 
+# Fixed cPanel Deployment Configuration
+# Added space after '-' and fixed export syntax
 deployment:
   tasks:
     - export DEPLOYPATH=/home/cimmytrax/public_html
