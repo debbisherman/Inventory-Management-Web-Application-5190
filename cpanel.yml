@@ -1,4 +1,5 @@
-# Corrected deployment tasks for cPanel Git
+# Corrected deployment tasks for cPanel
+# CRITICAL: Ensure there is a SPACE after the dash '-' 
 deployment:
   tasks:
     - export DEPLOYPATH=/home/cimmytrax/public_html

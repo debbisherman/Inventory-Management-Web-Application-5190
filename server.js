@@ -7,28 +7,32 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+// cPanel/Passenger uses process.env.PORT automatically
 const port = process.env.PORT || 3000;
 
-// Path to the distribution folder
 const distPath = path.join(__dirname, 'dist');
 const indexPath = path.join(distPath, 'index.html');
 
-console.log('--- Server Starting ---');
-console.log(`Directory: ${__dirname}`);
-console.log(`Checking for dist folder at: ${distPath}`);
+// Logging for debugging cPanel startup
+console.log('Server Initialization...');
+console.log(`Current Directory: ${__dirname}`);
 
-// Serve static files from the dist directory
 app.use(express.static(distPath));
 
-// Handle React routing - return index.html for all non-api requests
 app.get('*', (req, res) => {
   if (fs.existsSync(indexPath)) {
     res.sendFile(indexPath);
   } else {
-    res.status(500).send('<h1>Internal Server Error</h1><p>The "dist" folder was not found. Please run "npm run build" on the server.</p>');
+    res.status(500).send(`
+      <div style="font-family: sans-serif; padding: 20px;">
+        <h1>Configuration Error</h1>
+        <p>The <code>dist</code> folder is missing. Please run <code>npm run build</code> in the terminal.</p>
+        <p>Path checked: ${distPath}</p>
+      </div>
+    `);
   }
 });
 
 app.listen(port, () => {
-  console.log(`Server is successfully running on port ${port}`);
+  console.log(`Server running on port ${port}`);
 });
